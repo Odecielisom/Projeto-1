@@ -15,6 +15,7 @@
             font-family: Arial, sans-serif;
         }
 
+        /* O CONTAINER PRINCIPAL: Junta as duas metades lado a lado */
         main {
             display: flex;
             background-color: #ffffff;
@@ -24,6 +25,7 @@
             overflow: hidden;
         }
 
+        /* METADE ESQUERDA: O Formulário */
         form {
             width: 50%;
             padding: 40px;
@@ -69,6 +71,7 @@
             font-size: 16px;
         }
 
+        /* METADE DIREITA: O Painel Azul */
         .painel-boas-vindas {
             width: 50%;
             background-color: #4f46e5;
@@ -106,13 +109,13 @@
                 <label>Senha:</label>
                 <input type="password" id="senha">
             </div>
-            
+
             <div>
                 <button type="submit" id="btn-entrar">Entrar</button>
             </div>
 
             <div style="text-align: center; margin-top: 15px;">
-                <a href="#" id"link-ir-cadastro" style="color: #4f46e5; text-decoratio:
+                <a href="#" id="link-ir-cadastro" style="color: #4f46e5; text-decoration: none; font-size: 14px; font-weight: bold;">
                     Não tem uma conta? Cadastre-se
                 </a>
             </div>
@@ -136,8 +139,13 @@
             evento.preventDefault(); 
 
             let emailDigitado = document.getElementById('email').value;
-            
-            alert("Você tentou entrar com o e-mail: " + emailDigitado);
+            let senhaDigitada = document.getElementById('senha').value;
+
+            if (emailDigitado === 'admin@ode.com' && senhaDigitada === '123') {
+                alert("Acesso Permitido! Bem-vindo ao Odé Sistens.");
+            } else {
+                alert("Acesso Negado! E-mail ou senha incorretos.");
+            }
         });
     </script>
 
