@@ -129,14 +129,14 @@
 
 <script>
     // 1. criamos um "ouvinte". O JS vai ficar vigiando o botão de Entrar. "
-    document.getElementById('btn-entrar').addEventListtener('click', function(evento)
+    document.getElementById('btn-entrar').addEventListener('click', function(evento)
                                                             
         // Essa linha impede que a página recarregue e apague os dados ao clicar no botão
-        evento.preventDefalt();
+        evento.preventDefault();
 
         // 2. O JS vai lá na tela e captura o que está digitado dentro dos inputs. 
-        let emailDigitado = document.getElementById('email').value
-        let senhaDigitada = document.getElementById('senha').value
+        let emailDigitado = document.getElementById('email').value;
+        let senhaDigitada = document.getElementById('senha').value;
 
         // 3. Um alerta de teste para mostrar que o sistema já está lendo os dados!
         alert("Você tentou entrar com o e-mail: " + emailDigitado);
