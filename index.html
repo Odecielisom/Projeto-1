@@ -143,7 +143,7 @@
 
     <script>
         // INSIRA SEU LINK DO GOOGLE ABAIXO ENTRE AS ASPAS:
-        const URL_API = "https://script.google.com/macros/s/AKfycbxuJjsmfkvGbZZrHm-lLnxHwfiVUpqvtFOn9Z8GOu2WULYvCdfRviyBMbMz4zVjTd59JA/exec";
+        const URL_API = "https://script.google.com/macros/s/AKfycbxyh-0zOFMij6tHaZH2zraLME04KfOuU-pHhn7OajsR6AdYJ2PusTy8IfONjIJ6zc0KOw/exec";
 
         let modoAtual = "login"; // Pode ser "login" ou "cadastro"
 
@@ -201,6 +201,10 @@
             // Dispara os dados para o link do Google Sheets
             fetch(URL_API, {
                 method: "POST",
+                mode: "cors", // Força o modo de compartilhamento de recursos
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8" // O Google Sheets prefere receber assim do GitHub
+                },
                 body: JSON.stringify(dadosEnviar)
             })
             .then(resposta => resposta.json())
