@@ -12,14 +12,14 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: arial, san-serif.
+            font-family: Arial, sans-serif;
         }
 
         main {
             display: flex;
             background-color: #ffffff;
-            width: 800px
-            border-radius 12px;
+            width: 800px;
+            border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
@@ -29,7 +29,7 @@
             padding: 40px;
             box-sizing: border-box;
         }
-                
+
         h1 {
             color: #1a1a1a;
             margin-top: 0;
@@ -40,26 +40,25 @@
             margin-bottom: 20px;
         }
 
-        
         label {
             display: block;
             margin-bottom: 5px;
             color: #4a4a4a;
-            font-wight: bold;
+            font-weight: bold;
             font-size: 14px;
         }
 
         input {
-            width: 100%
+            width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 6px
+            border-radius: 6px;
             box-sizing: border-box;
             background-color: #f9fafb;
         }
 
         button {
-            width: 100%
+            width: 100%;
             background-color: #4f46e5;
             color: #ffffff;
             padding: 14px;
@@ -79,14 +78,13 @@
         }
 
         .painel-boas-vindas h2 {
-            marging-top: 0;
+            margin-top: 0;
             font-size: 28px;
-
         }
 
-        .painel-boas-vindas ul
+        .painel-boas-vindas ul {
             padding-left: 20px;
-            line-heigth: 2;
+            line-height: 2;
         }
     </style>
 </head>
@@ -95,29 +93,29 @@
     <main>
         <form>
             <div>
-                <h1> Acesse o sistema</h1>
+                <h1>Acesse o sistema</h1>
                 <p>Faça login para gerenciar sua loja.</p>
             </div>
-            
-                <div> 
-                        <label>E-mail:</label>
-                        <input type="email" id="email"> 
-                </div>
 
-                <div>
-                        <label>Senha:</label>
-                        <input type="password" id="senha"> 
-                </div>
+            <div>
+                <label>E-mail:</label>
+                <input type="email" id="email">
+            </div>
 
-                <div>
-                        <button type="submit" id="btn-entrar">Entrar</button> 
-                </div>
+            <div>
+                <label>Senha:</label>
+                <input type="password" id="senha">
+            </div>
+
+            <div>
+                <button type="submit" id="btn-entrar">Entrar</button>
+            </div>
         </form>
 
         <div class="painel-boas-vindas">
-            <h2>Bem-vindo ao Odé Sistens vendas </h2>
+            <h2>Bem-vindo ao Odé Sistens vendas</h2>
             <p>Gerencie seu painel de vendas e solicitações de forma eficiente</p>
-
+            
             <ul>
                 <li>Controle de estoque</li>
                 <li>Controle de entrada e saída de produtos</li>
@@ -127,21 +125,15 @@
         </div>
     </main>
 
-<script>
-    // 1. criamos um "ouvinte". O JS vai ficar vigiando o botão de Entrar. "
-    document.getElementById('btn-entrar').addEventListener('click', function(evento)
-                                                            
-        // Essa linha impede que a página recarregue e apague os dados ao clicar no botão
-        evento.preventDefault();
+    <script>
+        document.getElementById('btn-entrar').addEventListener('click', function(evento) {
+            evento.preventDefault(); 
 
-        // 2. O JS vai lá na tela e captura o que está digitado dentro dos inputs. 
-        let emailDigitado = document.getElementById('email').value;
-        let senhaDigitada = document.getElementById('senha').value;
+            let emailDigitado = document.getElementById('email').value;
+            
+            alert("Você tentou entrar com o e-mail: " + emailDigitado);
+        });
+    </script>
 
-        // 3. Um alerta de teste para mostrar que o sistema já está lendo os dados!
-        alert("Você tentou entrar com o e-mail: " + emailDigitado);
-    });
-</script>
-    
 </body>
 </html>
